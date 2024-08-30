@@ -28,5 +28,4 @@ jobs:
 
       - name: Use dynamic variable
         run: |
-          echo "${{ AWS_ACCOUNT_ID }}"
           echo "${{ vars.AWS_ACCOUNT_ID }}"
