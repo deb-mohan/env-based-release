@@ -1,0 +1,34 @@
+name: QA Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      ENVIRONMENT:
+        description: AWS Deployment Environment
+        required: true
+        default: dev
+        type: choice
+        options:
+          - DEV
+          - TEST
+      SCENARIO:
+        description: Test Scenario to run
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - one
+          - two
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  run-all-qa-tests:
+    if: ${{inputs.SCENARIO == 'all'}}
+    name: Run All QA Tests
+    uses: ./.github/workflows/tests.yaml
+    with:
+      ENV: ${{ inputs.ENVIRONMENT }}
+      SCENARIO: '**'
