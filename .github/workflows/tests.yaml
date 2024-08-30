@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENV }}
     env:
-      ACCOUNT_ID_VAR: 'AWS_ACCOUNT_ID_'${{ inputs.ENVIRONMENT }}
+      ACCOUNT_ID_VAR: 'AWS_ACCOUNT_ID_' + ${{ inputs.ENVIRONMENT }}
 
     steps:
       - name: set variables dynamically
