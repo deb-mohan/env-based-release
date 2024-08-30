@@ -32,4 +32,3 @@ jobs:
     with:
       ENV: ${{ inputs.ENVIRONMENT }}
       SCENARIO: '**'
-      ACCOUNT_ID_VAR: 'AWS_ACCOUNT_ID_'${{ inputs.ENVIRONMENT }}
