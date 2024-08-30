@@ -25,7 +25,8 @@ jobs:
       - name: set variables dynamically
         run: |
           echo AWS_ACCOUNT_ID='${{ env.ACCOUNT_ID_VAR_PREFIX }}''${{inputs.ENV}}' >> $GITHUB_ENV
+          echo ACCOUNT='${{vars.AWS_ACCOUNT_ID}}' >> $GITHUB_ENV
 
       - name: Use dynamic variable
         run: |
-          echo "${{ vars.AWS_ACCOUNT_ID }}"
+          echo "${{env.ACCOUNT}}"
