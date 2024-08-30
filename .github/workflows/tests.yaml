@@ -29,4 +29,4 @@ jobs:
       - name: Use dynamic variable
         AWS_ACCOUNT_ID: ${{AWS_ACCOUNT_ID_VAR}}${{imputs.ENV}}
         run: |
-          echo "${{AWS_ACCOUNT_ID }}"
+          echo "${{vars.AWS_ACCOUNT_ID }}"
